@@ -9,7 +9,7 @@ function InputBox({ label, className = "", amount,
     amountDisable = false,                                                  // <<---- mainly use if we want to disable the amount div
     currencyDisable = false                                                 // <<---- similarly happens for the another array as well to make it more controllable
 }) {
-    const amountInputID = useId();                                          // <<---- useId is the hook
+    const amountInputID = useId();                                          // <<---- useId is the hook provided by the react package.
     return (
         <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
             <div className="w-1/2">
