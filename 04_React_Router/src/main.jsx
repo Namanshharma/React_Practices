@@ -7,6 +7,7 @@ import './index.css'
 import AboutUs from './Components/About_us/About_Us'
 import ContactUs from './Components/Contact_us/Contact_Us'
 import MyParams from './Components/MyParams/MyParams'
+import Github from './Components/Github/Github'
 
 // this mentioned below way is the first way to create a router.
 // const router = createBrowserRouter([
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
       <Route path='about' element={<AboutUs />}></Route>
       <Route path='contact' element={<ContactUs />}></Route>
       <Route path='myParams/:id' element={<MyParams />} ></Route>
+      <Route path='Github' element={<Github />} ></Route>
     </Route>
   )
 )
