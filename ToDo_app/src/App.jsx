@@ -8,7 +8,7 @@ function App() {
   ]);
 
   const createToDo = () => {
-    setToDos(...toDos, { title: "Node", Description: `Every day for ${Math.random() * 10} mins` })
+    setToDos([...toDos, { title: "Node", Description: `Every day for ${Math.random() * 10} mins` }])
   }
 
   return (
