@@ -1,17 +1,46 @@
-import { useState } from 'react'
 import './App.css'
 
 // #region Concept of UseMemo
-export default function App() {
-  const [counter, setCounter] = useState(0);
-  return (
-    <>
-      <input placeholder='Enter any Number' onChange={(e) => { setCounter(e.target.value); }}></input>
-      <p>Sum is {counter}</p>
-      <button onClick={() => { setCounter(counter + 1); }}>Counter ({counter})</button>
-    </>
-  )
-}
+// export default function App() {
+//   // by using this, we have reduced the re-rendering. As by clicking on Button will not re-render the Input box and paragraph. Will check with using the console.log
+//   const [counter, setCounter] = useState(0);
+//   const [inputValue, setInputValue] = useState();
+
+//   const sum = useMemo(() => {
+//     console.log("use Memo clicked");
+//     let finalSum = 0;
+//     for (let i = 0; i <= inputValue; i++) {
+//       finalSum = finalSum + i;
+//     }
+//     return finalSum;
+//   }, [inputValue]);
+
+//   return (
+//     <>
+//       <input placeholder='Enter any number' onChange={(e) => { setInputValue(e.target.value) }}></input>
+//       <p>Sum of entered number {inputValue} is :- {sum}</p>
+//       <button onClick={() => { setCounter(counter + 1) }}>Counter ({counter})</button>
+//     </>
+//   )
+// }
+// export default function App() {
+// here in this due to usage of 2 useState hooks, by changing the Counter value it will re-render the Input box and sum paragraph which is un-necessary, so to handle this we can use UseMemo Hook
+//   const [sum, setSum] = useState(0);
+//   const [counter, setCounter] = useState(0);
+//   return (
+//     <>
+//       <input placeholder='Enter any Number' onChange={(e) => {
+//         let finalSum = 0;
+//         for (let i = 0; i <= e.target.value; i++) {
+//           finalSum = finalSum + i;
+//         }
+//         setSum(finalSum);
+//       }}></input>
+//       <p>Sum is {sum}</p>
+//       <button onClick={() => { setCounter(counter + 1); }}>Counter ({counter})</button>
+//     </>
+//   )
+// }
 //#endregion
 
 //#region Concept of useEffect Hook
@@ -187,4 +216,5 @@ export default function App() {
 // UseState Hook :- It let's you describe the state of your app. Whenever state changes/updates it triggers re-render which finally results in DOM update.
 // UseEffect Hook :- It allows you to perform side effects (SetTimeout, SetInterval, fetch) in functional components. Side effect are the operations that can affect other components or can't be done during rendering, such as data fetching, subscription or manually changing the DOM in react componets.
 //                :- UseEffect hook server the same purpose as "ComponentDidMount", "ComponentDidUpdate" and "ComponentWillUnmount" in React Class Components, but unified into single API.
+// UseMemo Hook :- Memoize the value across re-renders, only recalculate it if dependency array value changes.
 //#endregion
