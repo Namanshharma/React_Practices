@@ -1,5 +1,9 @@
 import './App.css'
 
+//#region Concept of UseRef Hook
+//  :- This is mainly used to provide the Reference of Div or DOM elements.
+//#endregion
+
 // #region Concept of UseMemo
 // export default function App() {
 //   // by using this, we have reduced the re-rendering. As by clicking on Button will not re-render the Input box and paragraph. Will check with using the console.log
@@ -178,7 +182,7 @@ import './App.css'
 //   )
 // }
 
-// function CustomHeader() {                 // to minimize the re-rendering in React 
+// function CustomHeader() {                 // to minimize the re-rendering in React
 //   const [title, setTitle] = useState("Naman");
 //   return (
 //     <>
@@ -188,7 +192,7 @@ import './App.css'
 //   )
 // }
 
-// const Header = memo(function Header({ title }) {          // 
+// const Header = memo(function Header({ title }) {          //
 //   return (
 //     <>
 //       <h1>{title}</h1>
