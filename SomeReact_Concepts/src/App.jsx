@@ -1,4 +1,3 @@
-import { memo, useCallback, useState } from 'react'
 import './App.css'
 
 //#region Concept of UseRef Hook
@@ -6,27 +5,27 @@ import './App.css'
 //#endregion
 
 // #region concept of Use Callback hook
-export default function App() {
-  const [counter, setCounter] = useState(0);
+// export default function App() {
+//   const [counter, setCounter] = useState(0);
 
-  const randomFunction = useCallback(() => {
-    console.log("Called Random function");
-  }, [])
+//   const randomFunction = useCallback(() => {
+//     console.log("Called Random function");
+//   }, [])
 
-  return (
-    <>
-      <CustomButton inputFunction={randomFunction}></CustomButton><br></br>
-      <button onClick={() => { setCounter(counter + 1) }}>Counter {counter}</button>
-    </>
-  )
-}
+//   return (
+//     <>
+//       <CustomButton inputFunction={randomFunction}></CustomButton><br></br>
+//       <button onClick={() => { setCounter(counter + 1) }}>Counter {counter}</button>
+//     </>
+//   )
+// }
 
-const CustomButton = memo(({ inputFunction }) => {
-  console.log("Custom button called")
-  return <div>
-    <button onClick={inputFunction}>Button Clicked</button>
-  </div>
-})
+// const CustomButton = memo(({ inputFunction }) => {
+//   console.log("Custom button called")
+//   return <div>
+//     <button onClick={inputFunction}>Button Clicked</button>
+//   </div>
+// })
 //#endregion
 
 // #region Concept of UseMemo
