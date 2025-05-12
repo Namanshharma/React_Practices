@@ -1,6 +1,10 @@
 import { memo, useCallback, useState } from 'react'
 import './App.css'
 
+//#region Concept of UseRef Hook
+//  :- This is mainly used to provide the Reference of Div or DOM elements.
+//#endregion
+
 // #region concept of Use Callback hook
 export default function App() {
   const [counter, setCounter] = useState(0);
@@ -203,7 +207,7 @@ const CustomButton = memo(({ inputFunction }) => {
 //   )
 // }
 
-// function CustomHeader() {                 // to minimize the re-rendering in React 
+// function CustomHeader() {                 // to minimize the re-rendering in React
 //   const [title, setTitle] = useState("Naman");
 //   return (
 //     <>
@@ -213,7 +217,7 @@ const CustomButton = memo(({ inputFunction }) => {
 //   )
 // }
 
-// const Header = memo(function Header({ title }) {          // 
+// const Header = memo(function Header({ title }) {          //
 //   return (
 //     <>
 //       <h1>{title}</h1>
