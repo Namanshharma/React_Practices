@@ -1,4 +1,29 @@
+import { memo, useCallback, useState } from 'react'
 import './App.css'
+
+// #region concept of Use Callback hook
+export default function App() {
+  const [counter, setCounter] = useState(0);
+
+  const randomFunction = useCallback(() => {
+    console.log("Called Random function");
+  }, [])
+
+  return (
+    <>
+      <CustomButton inputFunction={randomFunction}></CustomButton><br></br>
+      <button onClick={() => { setCounter(counter + 1) }}>Counter {counter}</button>
+    </>
+  )
+}
+
+const CustomButton = memo(({ inputFunction }) => {
+  console.log("Custom button called")
+  return <div>
+    <button onClick={inputFunction}>Button Clicked</button>
+  </div>
+})
+//#endregion
 
 // #region Concept of UseMemo
 // export default function App() {
@@ -210,6 +235,7 @@ import './App.css'
 // KEY concept of React
 // Side Effects :- In React, the concept of side effect encompasses any operations that reach outside the functional scope of react component. These operations can affect other components, interact with browser or perform async data fetching.
 //:- SetTimeout, SetInterval, fetch, document.getElementById().innerHTML  <<------ Bcoz all of these are not a part of react but all of these leads to Change or updates in DOM.
+//:- Sometimes we wrap the component inside the Memo keyword just to make sure that it will not re-render the Component whose Props didn't change
 
 // Hooks :- It is a react feature that allow you to use State and other React features without rewriting a class. They enable functional components to have access to stateful logic and lifecycle features, which were previously present in Class based components.
 
@@ -217,4 +243,5 @@ import './App.css'
 // UseEffect Hook :- It allows you to perform side effects (SetTimeout, SetInterval, fetch) in functional components. Side effect are the operations that can affect other components or can't be done during rendering, such as data fetching, subscription or manually changing the DOM in react componets.
 //                :- UseEffect hook server the same purpose as "ComponentDidMount", "ComponentDidUpdate" and "ComponentWillUnmount" in React Class Components, but unified into single API.
 // UseMemo Hook :- Memoize the value across re-renders, only recalculate it if dependency array value changes.
+// UseCallBack Hook :- It is used to memoize the funcitons, which can help in optimizing the performance of your application, especially in cases involving child components that rely on reference equality to prevent unnecessay renders.
 //#endregion
